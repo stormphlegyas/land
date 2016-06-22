@@ -1,3 +1,15 @@
+// ************************************************************************** //
+//                                                                            //
+//                                                        :::      ::::::::   //
+//   AI.bot.cs                                          :+:      :+:    :+:   //
+//                                                    +:+ +:+         +:+     //
+//   By: mmounini <mmounini@student.42.fr>          +#+  +:+       +#+        //
+//                                                +#+#+#+#+#+   +#+           //
+//   Created: 2016/06/23 01:06:27 by mmounini          #+#    #+#             //
+//   Updated: 2016/06/23 01:06:28 by mmounini         ###   ########.fr       //
+//                                                                            //
+// ************************************************************************** //
+
 using System;
 using System.Linq;
 using System.IO;
@@ -20,7 +32,7 @@ class Player
             if (sf[i] == sf[i + 1])
                 break;
         }
-        
+
         return (i);
     }
     static double sqr(double nb){
@@ -41,7 +53,7 @@ class Player
         else if (power == 2)
             cst = 1 * 3.711 - 3;
         pwr = - (vSpeed - 4 - (int)Math.Round(cst)) - 20;
-        
+
             if (pwr > 4)
                 pwr = 4;
             if (pwr < 0)
@@ -115,13 +127,13 @@ class Player
             tmp = -hSpeed;
         int target = destx + ((destx2 - destx) / 2);
         int i = 0;
-        
+
         while(tmp > 20){
             tmp -= 1f;
             i++;
         }
         Console.Error.WriteLine(i);
-        
+
         if (destx2 < X){
             if (X + (i * hSpeed) > target)
                 angle = 45;
